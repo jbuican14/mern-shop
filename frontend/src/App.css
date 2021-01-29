@@ -1,24 +1,25 @@
+.main-header {
+  min-height: 80vh;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+  background: rgb(181, 238, 212);
+  color: rgb(54, 54, 54);
+}
+
 .header-title {
   border-bottom: 5px solid #91130f;
   display: inline-block;
 }
 
-.header-title::after {
-  content: '';
-  content: '';
-  width: 250%;
-  height: 100%;
-  background: linear-gradient(to right, transparent, #fff, #fff);
-  position: absolute;
-  top: 0;
-  right: 0;
-  animation: bannerAnimation 3s linear forwards;
+.homeview-container {
+  background: rgb(181, 199, 191);
+  margin-top: -37rem;
+  background: #ffc0cbad;
 }
-@keyframes bannerAnimation {
-  0% {
-    right: 0;
-  }
-  100% {
-    right: -250%;
-  }
+
+.homeview-display {
+  margin-top: 25rem;
+}
+
+.card {
+  background-color: #d3c0c0;
 }

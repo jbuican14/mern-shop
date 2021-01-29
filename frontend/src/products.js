@@ -2,7 +2,7 @@ const products = [
   {
     _id: '1',
     name: 'Olous Aromatique Room Spray',
-    image: '/images/Aesop-Home-Room-Spray-Olous-100mL-large.webp',
+    image: '/images/Aesop-Home-Room-Spray-Olous-100mL-large.jpg',
     description:
       'A blend of citrus botanicals, balanced by breaking waves of Cedar and the refreshing spice of Cardamom.',
     brand: 'Aesop',
@@ -27,13 +27,13 @@ const products = [
   },
   {
     _id: '3',
-    name: 'Cannon EOS 80D DSLR Camera',
-    image: '/images/camera.jpg',
+    name: 'Le Pliage Original Backpack',
+    image: '/images/longchamp-le-pliage-original-backpack.jpg',
     description:
-      'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
-    brand: 'Cannon',
-    category: 'Electronics',
-    price: 929.99,
+      'An iconic silhouette that has gained a cult status worldwide, the Longchamp Le Pliage design is inspired by the neat folds of origami and features an adaptable profile that caters to the needs of modern metropolitan women. This backpack iteration delivers practical simplicity and style with its petite stature, making it the go-to accessory for everything from trips to the city, short-haul flights and weekend strolls in the countryside.',
+    brand: 'Longchamp',
+    category: 'Accessories',
+    price: 75,
     countInStock: 5,
     rating: 3,
     numReviews: 3,
@@ -66,7 +66,7 @@ const products = [
   {
     _id: '6',
     name: 'Amazon Echo Dot 3rd Generation',
-    image: '/images/alexa.png',
+    image: '/images/alexa.jpg',
     description:
       'Meet Echo Dot - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space',
     brand: 'Amazon',

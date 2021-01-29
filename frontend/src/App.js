@@ -3,6 +3,9 @@ import { Container } from 'react-bootstrap';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+import HomeView from './view/HomeView';
+
 import './App.css';
 
 const App = () => {
@@ -10,9 +13,14 @@ const App = () => {
     <>
       <Header />
       <main className="py-3">
-        <Container>
+        <Container className="main-header">
           <div className="header-title">
             <h1>Welcome to MERNShop</h1>
+          </div>
+        </Container>
+        <Container className="homeview-container">
+          <div className="homeview-display">
+            <HomeView />
           </div>
         </Container>
       </main>

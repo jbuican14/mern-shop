@@ -1,6 +1,10 @@
-main {
-  min-height: 80vh;
-  background: rgb(181, 238, 212);
-  color: rgb(54, 54, 54);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+body {
+  box-sizing: border-box;
 }
+
+main {
+  height: 85vh;
+  display: block;
+}
+
+/* footer */
