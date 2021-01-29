@@ -1,0 +1,24 @@
+.header-title {
+  border-bottom: 5px solid #91130f;
+  display: inline-block;
+}
+
+.header-title::after {
+  content: '';
+  content: '';
+  width: 250%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #fff, #fff);
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: bannerAnimation 3s linear forwards;
+}
+@keyframes bannerAnimation {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -250%;
+  }
+}

@@ -1,0 +1,81 @@
+const products = [
+  {
+    _id: '1',
+    name: 'Olous Aromatique Room Spray',
+    image: '/images/Aesop-Home-Room-Spray-Olous-100mL-large.webp',
+    description:
+      'A blend of citrus botanicals, balanced by breaking waves of Cedar and the refreshing spice of Cardamom.',
+    brand: 'Aesop',
+    category: 'Home Gifts',
+    price: 40.0,
+    countInStock: 3,
+    rating: 5.0,
+    numReviews: 4,
+  },
+  {
+    _id: '2',
+    name: 'Wild Kopi Luwak Coffee Beans (250g)',
+    image: '/images/harrods-wild-kopi-luwak-coffee-beans.jpg',
+    description:
+      "Harvested in Sumatra, Indonesia, this Wild Kopi Luwak coffee enjoys the prestige of being one of the world's most exclusive varieties. Simply grind and steep the precious whole coffee beans for a brew that's deliciously rich with notes of red apple, chocolate and citrus.",
+    brand: 'Harrods',
+    category: 'Food',
+    price: 500,
+    countInStock: 10,
+    rating: 5.0,
+    numReviews: 4,
+  },
+  {
+    _id: '3',
+    name: 'Cannon EOS 80D DSLR Camera',
+    image: '/images/camera.jpg',
+    description:
+      'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
+    brand: 'Cannon',
+    category: 'Electronics',
+    price: 929.99,
+    countInStock: 5,
+    rating: 3,
+    numReviews: 3,
+  },
+  {
+    _id: '4',
+    name: 'Chocolate-Dipped Orange Slices, 140g',
+    image: '/images/Chocolate-DippedOrangeSlices.jpg',
+    description:
+      'Made in England, these candied treats are the classic combination of orange and chocolate. Each orange slice is dipped in rich, dark chocolate to make a delicious after-dinner confection.',
+    brand: 'Fortunm & Mason',
+    category: "Valentine's Gift",
+    price: 18.5,
+    countInStock: 10,
+    rating: 5,
+    numReviews: 3,
+  },
+  {
+    _id: '5',
+    name: 'Logitech HERO 25K SENSOR',
+    image: '/images/g403-prodigy-gaming-mouse15.jpg',
+    description: 'g403-prodigy-gaming-mouse15',
+    brand: 'Logitech',
+    category: 'Electronics',
+    price: 49.99,
+    countInStock: 7,
+    rating: 4.7,
+    numReviews: 2,
+  },
+  {
+    _id: '6',
+    name: 'Amazon Echo Dot 3rd Generation',
+    image: '/images/alexa.png',
+    description:
+      'Meet Echo Dot - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space',
+    brand: 'Amazon',
+    category: 'Electronics',
+    price: 29.99,
+    countInStock: 0,
+    rating: 4,
+    numReviews: 4,
+  },
+];
+
+export default products;
