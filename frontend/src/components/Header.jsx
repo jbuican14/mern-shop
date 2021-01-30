@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
+import './../styles/utilities.css';
+
 const Header = () => {
   return (
     <header>
@@ -20,6 +22,11 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <div className="main-header">
+        <div className="u-center-text u-margin-bottom-8">
+          <h1>Welcome to MERNShop</h1>
+        </div>
+      </div>
     </header>
   );
 };

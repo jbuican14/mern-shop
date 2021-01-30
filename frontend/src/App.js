@@ -6,23 +6,18 @@ import Footer from './components/Footer';
 
 import HomeView from './view/HomeView';
 
-import './App.css';
+import './styles/App.css';
 
 const App = () => {
   return (
     <>
       <Header />
       <main className="py-3">
-        <Container className="main-header">
-          <div className="header-title">
-            <h1>Welcome to MERNShop</h1>
-          </div>
-        </Container>
-        <Container className="homeview-container">
+        <div className="homeview-container">
           <div className="homeview-display">
             <HomeView />
           </div>
-        </Container>
+        </div>
       </main>
       <footer>
         <Footer />
