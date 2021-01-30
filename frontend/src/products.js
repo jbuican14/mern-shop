@@ -35,7 +35,7 @@ const products = [
     category: 'Accessories',
     price: 75,
     countInStock: 5,
-    rating: 3,
+    rating: 4.3,
     numReviews: 3,
   },
   {
@@ -48,7 +48,7 @@ const products = [
     category: "Valentine's Gift",
     price: 18.5,
     countInStock: 10,
-    rating: 5,
+    rating: 4.8,
     numReviews: 3,
   },
   {
@@ -73,7 +73,7 @@ const products = [
     category: 'Electronics',
     price: 29.99,
     countInStock: 0,
-    rating: 4,
+    rating: 4.4,
     numReviews: 4,
   },
 ];
