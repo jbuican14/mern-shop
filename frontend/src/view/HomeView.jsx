@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import Product from '../components/Product';
 import { Row, Col } from 'react-bootstrap';
 
-import products from '../products';
 import '../styles/utilities.css';
 
 const HomeView = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Request data via axios
+    const fetchProduct = async () => {
+      const { data } = await axios.get('/api/products');
+      setProducts(data);
+    };
+
+    fetchProduct();
+  }, []);
+
   return (
     <>
       <div className="u-center-text u-margin-bottom-8">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Row,
@@ -9,13 +9,22 @@ import {
   Button,
   Container,
 } from 'react-bootstrap';
+import axios from 'axios';
 
 import Rating from '../components/Rating';
-import products from '../products';
 
 const ProductView = ({ match }) => {
-  //.id because this uses the :id from the previous ones
-  const product = products.find((item) => item._id === match.params.id);
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/products/${match.params.id}`);
+      setProduct(data);
+    };
+
+    fetchProduct();
+  }, []);
+
   return (
     <Container>
       <Link className="btn btn-light my-3" to="/">
