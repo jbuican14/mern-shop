@@ -23,7 +23,7 @@ const ProductView = ({ match }) => {
     };
 
     fetchProduct();
-  }, []);
+  }, [match]);
 
   return (
     <Container>
