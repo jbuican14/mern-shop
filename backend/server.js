@@ -3,6 +3,7 @@ import color from 'color';
 import express from 'express';
 import connectDB from './config/db.js';
 
+import { notFound, errorHandler } from './middleware/error.middleware.js';
 import productRoutes from './routes/product.routes.js';
 
 dotenv.config();
@@ -16,6 +17,9 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/products', productRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 // Usage for dotenv package
 const PORT = process.env.PORT || 5000;
