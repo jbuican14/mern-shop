@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Olous Aromatique Room Spray',
     image: '/images/Aesop-Home-Room-Spray-Olous-100mL-large.jpg',
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 4,
   },
   {
-    _id: '2',
     name: 'Wild Kopi Luwak Coffee Beans (250g)',
     image: '/images/harrods-wild-kopi-luwak-coffee-beans.jpg',
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 4,
   },
   {
-    _id: '3',
     name: 'Le Pliage Original Backpack',
     image: '/images/longchamp-le-pliage-original-backpack.jpg',
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 3,
   },
   {
-    _id: '4',
     name: 'Chocolate-Dipped Orange Slices, 140g',
     image: '/images/Chocolate-DippedOrangeSlices.jpg',
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 3,
   },
   {
-    _id: '5',
     name: 'Logitech HERO 25K SENSOR',
     image: '/images/g403-prodigy-gaming-mouse15.jpg',
     description: 'g403-prodigy-gaming-mouse15',
@@ -64,7 +59,6 @@ const products = [
     numReviews: 2,
   },
   {
-    _id: '6',
     name: 'Amazon Echo Dot 3rd Generation',
     image: '/images/alexa.jpg',
     description:
