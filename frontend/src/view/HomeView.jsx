@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; // use dispatch and bring part of state via useSelector
 import { Row, Col } from 'react-bootstrap';
 
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 import Product from '../components/Product';
 import { listProducts } from '../actions/product.action';
 
@@ -20,9 +22,9 @@ const HomeView = () => {
   return (
     <>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <h2>{error}</h2>
+        <Message variant="danger">{error}</Message>
       ) : (
         <div>
           <div className="u-center-text u-margin-bottom-8">
