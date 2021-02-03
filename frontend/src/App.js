@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import CartView from './view/CartView';
 import HomeView from './view/HomeView';
 import ProductView from './view/ProductView';
 
@@ -18,6 +19,7 @@ const App = () => {
           <div className="homeview-display">
             <Route exact path="/" component={HomeView} />
             <Route path="/product/:id" component={ProductView} />
+            <Route path="/cart/:id?" component={CartView} />
           </div>
         </div>
       </main>

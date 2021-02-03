@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -9,6 +9,7 @@ import {
   Card,
   Button,
   Container,
+  Form,
 } from 'react-bootstrap';
 
 import Rating from '../components/Rating';
@@ -16,7 +17,9 @@ import { listProductDetails } from '../actions/product.action';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
-const ProductView = ({ match }) => {
+const ProductView = ({ history, match }) => {
+  const [qty, setQty] = useState(0);
+
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -25,6 +28,10 @@ const ProductView = ({ match }) => {
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match]);
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
+  };
 
   return (
     <Container>
@@ -78,9 +85,33 @@ const ProductView = ({ match }) => {
                   </Row>
                 </ListGroup.Item>
 
+                {/* implement the cart */}
+                {product.countInStock > 0 && (
+                  <ListGroup.Item>
+                    <Row>
+                      <Col> Qty</Col>
+                      <Col md={2} className="mx-4">
+                        <Form.Control
+                          as="select"
+                          value={qty}
+                          size="sm"
+                          onChange={(e) => setQty(e.target.value)}
+                        >
+                          {[...Array(product.countInStock).keys()].map((i) => (
+                            <option key={i + 1} value={i + 1}>
+                              {i + 1}
+                            </option>
+                          ))}
+                        </Form.Control>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                )}
+
                 <ListGroup.Item>
                   <Row>
                     <Button
+                      onClick={addToCartHandler}
                       className="btn-block"
                       type="button"
                       size="sm"
