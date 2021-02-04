@@ -13,23 +13,26 @@ import {
 } from 'react-bootstrap';
 
 import Message from '../components/Message';
-import { addToCart } from '../actions/cart.action';
+import { addToCart, removedFromCart } from '../actions/cart.action';
 
 const CartView = ({ match, location, history }) => {
   const productId = match.params.id;
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-  console.log(cartItems);
+  console.log('cartItems,', cartItems);
+
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
-  }, [dispatch, productId]);
+  }, [dispatch, productId, qty]);
 
   const removeFromCartHandler = (id) => {
-    console.log('remove');
+    // console.log('remove');
+    dispatch(removedFromCart(id));
   };
 
   const checkoutHandler = () => {
@@ -160,3 +163,14 @@ const CartView = ({ match, location, history }) => {
 };
 
 export default CartView;
+
+//Alternatively
+/*
+* import { useParams, useLocation } from 'react-router-dom';
+*  
+* const location = useLocation();
+* const qty = new URLSearchParams(location.search).get('qty');
+// qty will be 'string' or 'null'.
+
+
+  */
