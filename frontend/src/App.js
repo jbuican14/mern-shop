@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import CartView from './view/CartView';
 import HomeView from './view/HomeView';
 import ProductView from './view/ProductView';
+import LoginView from './view/LoginView';
 
 import './styles/App.css';
 
@@ -17,9 +18,10 @@ const App = () => {
       <main className="py-3">
         <div className="homeview-container">
           <div className="homeview-display">
-            <Route exact path="/" component={HomeView} />
             <Route path="/product/:id" component={ProductView} />
+            <Route path="/login" component={LoginView} />
             <Route path="/cart/:id?" component={CartView} />
+            <Route exact path="/" component={HomeView} />
           </div>
         </div>
       </main>
