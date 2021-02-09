@@ -8,6 +8,7 @@ import CartView from './view/CartView';
 import HomeView from './view/HomeView';
 import ProductView from './view/ProductView';
 import LoginView from './view/LoginView';
+import RegisterView from './view/RegisterView';
 
 import './styles/App.css';
 
@@ -20,6 +21,7 @@ const App = () => {
           <div className="homeview-display">
             <Route path="/product/:id" component={ProductView} />
             <Route path="/login" component={LoginView} />
+            <Route path="/register" component={RegisterView} />
             <Route path="/cart/:id?" component={CartView} />
             <Route exact path="/" component={HomeView} />
           </div>
