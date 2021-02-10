@@ -30,7 +30,7 @@ const RegisterView = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('submit');
+    console.log('register');
     if (password !== confirmPassword) {
       setMessage('Passwords do not match');
     } else {
@@ -93,9 +93,9 @@ const RegisterView = ({ location, history }) => {
 
       <Row className="py-3">
         <Col>
-          Have an Account ?{' '}
+          Have an Account ?
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-            Login{' '}
+            Login
           </Link>
         </Col>
       </Row>
