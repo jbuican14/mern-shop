@@ -11,6 +11,9 @@ import LoginView from './view/LoginView';
 import RegisterView from './view/RegisterView';
 
 import './styles/App.css';
+import ProfileView from './view/ProfileView';
+import ShippingView from './view/ShippingView';
+import PaymentView from './view/PaymentView';
 
 const App = () => {
   return (
@@ -20,8 +23,11 @@ const App = () => {
         <div className="homeview-container">
           <div className="homeview-display">
             <Route path="/product/:id" component={ProductView} />
+            <Route path="/shipping" component={ShippingView} />
+            <Route path="/payment" component={PaymentView} />
             <Route path="/login" component={LoginView} />
             <Route path="/register" component={RegisterView} />
+            <Route path="/profile" component={ProfileView} />
             <Route path="/cart/:id?" component={CartView} />
             <Route exact path="/" component={HomeView} />
           </div>
