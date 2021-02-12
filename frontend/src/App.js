@@ -14,6 +14,7 @@ import './styles/App.css';
 import ProfileView from './view/ProfileView';
 import ShippingView from './view/ShippingView';
 import PaymentView from './view/PaymentView';
+import PlaceOrderView from './view/PlaceOrderView';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <div className="homeview-container">
           <div className="homeview-display">
             <Route path="/product/:id" component={ProductView} />
+            <Route path="/placeorder" component={PlaceOrderView} />
             <Route path="/shipping" component={ShippingView} />
             <Route path="/payment" component={PaymentView} />
             <Route path="/login" component={LoginView} />
