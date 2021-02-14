@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import FormContainer from '../components/FormContainer';
+// import FormContainer from '../components/FormContainer';
 import Message from '../components/Message';
 import CheckoutSteps from '../components/CheckoutSteps';
+import { createOrder } from '../actions/order.action';
 
-const PlaceOrderView = () => {
+const PlaceOrderView = ({ history }) => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   console.log('cart ', cart);
 
@@ -22,8 +24,29 @@ const PlaceOrderView = () => {
   cart.taxPrice = parseInt(0.2 * cart.itemsPrice).toFixed(2);
   cart.totalPrice = Number(cart.itemsPrice + cart.shippingPrice).toFixed(2);
 
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
+
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`);
+    }
+    // eslint-disable-next-line
+  }, [history, success]);
+
   const placeOrderHandler = () => {
     console.log('place Order');
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        totalPrice: cart.totalPrice,
+        taxPrice: cart.taxPrice,
+      })
+    );
   };
 
   return (
@@ -118,6 +141,9 @@ const PlaceOrderView = () => {
                 </Row>
               </ListGroup.Item>
 
+              <ListGroup.Item>
+                {error && <Message variant="danger">{error}</Message>}
+              </ListGroup.Item>
               <ListGroup.Item>
                 <Button
                   type="button"

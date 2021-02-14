@@ -15,6 +15,7 @@ import {
   userUpdateProfileReducer,
 } from './reducers/user.reducer';
 import { saveShippingAddress } from './actions/cart.action';
+import { orderCreateReducer } from './reducers/order.reducer';
 
 const reducer = combineReducers({
   productList: productListReducer,
@@ -24,6 +25,7 @@ const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
   userUpdateProfile: userUpdateProfileReducer,
+  orderCreate: orderCreateReducer,
 });
 
 const localstorageItem = localStorage.getItem('cartItems');
