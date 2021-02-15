@@ -15,6 +15,7 @@ import ProfileView from './view/ProfileView';
 import ShippingView from './view/ShippingView';
 import PaymentView from './view/PaymentView';
 import PlaceOrderView from './view/PlaceOrderView';
+import OrderView from './view/OrderView';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <main className="py-3">
         <div className="homeview-container">
           <div className="homeview-display">
+            <Route path="/order/:id" component={OrderView} />
             <Route path="/product/:id" component={ProductView} />
             <Route path="/placeorder" component={PlaceOrderView} />
             <Route path="/shipping" component={ShippingView} />
