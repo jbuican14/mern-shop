@@ -57,4 +57,47 @@ const getOrderById = asyncHandler(async (req, res) => {
   }
 });
 
-export { addOrderItems, getOrderById };
+// @desc Update order to paid
+// @route GET /api/orders/:id/pay
+// @access Private
+const updateOrderToPaid = asyncHandler(async (req, res) => {
+  // Destructor from request body
+  console.log('In update Order to paid controller');
+  console.log(req.params.id);
+  const order = await Order.findById(req.params.id);
+  console.log(order);
+
+  if (order) {
+    order.isPaid = true;
+    order.paidAt = Date.now();
+    order.paymentResult = {
+      id: req.body.id,
+      status: req.body.status,
+      update_time: req.body.update_time,
+      email_address: req.body.payer.email_address,
+    };
+    const updatedOrder = await order.save();
+
+    res.json(updatedOrder);
+  } else {
+    res.status(404);
+    throw new Error('Order not found');
+  }
+
+  // Save to a database
+  const updatedOrder = await order.save();
+  res.json(updatedOrder);
+});
+
+// order history
+// @desc GET logged in user orders
+// @route GET /api/orders/myorders
+// @access Private
+const getOrderHistory = asyncHandler(async (req, res) => {
+  console.log('req.user._id', req.user._id, req);
+  const orders = await Order.find({ user: req.user._id });
+  console.log(orders);
+  res.json(orders);
+});
+
+export { addOrderItems, getOrderById, updateOrderToPaid, getOrderHistory };
