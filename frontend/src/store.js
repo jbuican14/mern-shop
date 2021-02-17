@@ -14,10 +14,10 @@ import {
   userRegisterReducer,
   userUpdateProfileReducer,
 } from './reducers/user.reducer';
-import { saveShippingAddress } from './actions/cart.action';
 import {
   orderCreateReducer,
   orderDetailsReducer,
+  orderMyOrderReducer,
   orderPayReducer,
 } from './reducers/order.reducer';
 
@@ -32,6 +32,7 @@ const reducer = combineReducers({
   orderCreate: orderCreateReducer,
   orderDetails: orderDetailsReducer,
   orderPay: orderPayReducer,
+  orderMyOrder: orderMyOrderReducer,
 });
 
 const localstorageItem = localStorage.getItem('cartItems');

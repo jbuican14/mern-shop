@@ -5,6 +5,10 @@ import {
   ORDER_DETAILS_FAIL,
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
+  ORDER_MY_ORDER_FAIL,
+  ORDER_MY_ORDER_REQUEST,
+  ORDER_MY_ORDER_RESET,
+  ORDER_MY_ORDER_SUCCESS,
   ORDER_PAY_FAIL,
   ORDER_PAY_REQUEST,
   ORDER_PAY_RESET,
@@ -75,6 +79,32 @@ export const orderPayReducer = (state = {}, action) => {
       };
     case ORDER_PAY_RESET:
       return {};
+    default:
+      return state;
+  }
+};
+
+// Order history
+export const orderMyOrderReducer = (state = { orders: [] }, action) => {
+  switch (action.type) {
+    case ORDER_MY_ORDER_REQUEST:
+      return {
+        loading: true,
+      };
+    case ORDER_MY_ORDER_SUCCESS:
+      return {
+        loading: false,
+        orders: action.payload,
+      };
+    case ORDER_MY_ORDER_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    case ORDER_MY_ORDER_RESET:
+      return {
+        orders: [],
+      };
     default:
       return state;
   }
