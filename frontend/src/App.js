@@ -16,6 +16,7 @@ import ShippingView from './view/ShippingView';
 import PaymentView from './view/PaymentView';
 import PlaceOrderView from './view/PlaceOrderView';
 import OrderView from './view/OrderView';
+import UserListView from './view/UserListView';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/register" component={RegisterView} />
             <Route path="/profile" component={ProfileView} />
             <Route path="/cart/:id?" component={CartView} />
+            <Route path="/admin/userlist" component={UserListView} />
             <Route exact path="/" component={HomeView} />
           </div>
         </div>
