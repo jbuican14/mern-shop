@@ -1,3 +1,4 @@
+import { ORDER_PAY_RESET } from '../constants/order.constants';
 import {
   USER_DETAILS_FAIL,
   USER_DETAILS_REQUEST,
@@ -85,4 +86,12 @@ export const userListReducer = (state = { users: [] }, action) => {
     default:
       return state;
   }
+};
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem('userIndo');
+  dispatch({ type: USER_LOGOUT });
+  dispatch({ type: USER_DETAILS_RESET });
+  dispatch({ type: ORDER_PAY_RESET });
+  dispatch({ type: USER_LIST_RESET });
 };
