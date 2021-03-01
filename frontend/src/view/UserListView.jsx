@@ -40,9 +40,6 @@ const UserListView = () => {
             </tr>
           </thead>
           <tbody>
-            {console.log(users)}
-            {console.log(userList)}
-
             {users.map((user) => (
               <tr key={user._id}>
                 <td>{user._id}</td>

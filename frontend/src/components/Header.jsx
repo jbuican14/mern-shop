@@ -55,14 +55,25 @@ const Header = () => {
 
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown title="Admin" id="adminmenu">
-                  <LinkContainer to="/admin/userlist">
-                    <NavDropdown.Item>Users</NavDropdown.Item>
+                  <LinkContainer
+                    to="/admin/userlist"
+                    style={{ width: '71%', position: 'relative' }}
+                  >
+                    <NavDropdown.Item
+                      style={{ width: '85%', position: 'relative' }}
+                    >
+                      Users
+                    </NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/admin/productlist">
-                    <NavDropdown.Item>Products</NavDropdown.Item>
+                    <NavDropdown.Item style={{ width: '85%' }}>
+                      Products
+                    </NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/admin/orderlist">
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                    <NavDropdown.Item style={{ width: '85%' }}>
+                      Orders
+                    </NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}
