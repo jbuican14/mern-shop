@@ -17,6 +17,7 @@ import PaymentView from './view/PaymentView';
 import PlaceOrderView from './view/PlaceOrderView';
 import OrderView from './view/OrderView';
 import UserListView from './view/UserListView';
+import UserEditByAdminView from './view/UserEditByAdminView';
 
 const App = () => {
   return (
@@ -25,16 +26,20 @@ const App = () => {
       <main className="py-3">
         <div className="homeview-container">
           <div className="homeview-display">
-            <Route path="/order/:id" component={OrderView} />
-            <Route path="/product/:id" component={ProductView} />
-            <Route path="/placeorder" component={PlaceOrderView} />
-            <Route path="/shipping" component={ShippingView} />
-            <Route path="/payment" component={PaymentView} />
-            <Route path="/login" component={LoginView} />
-            <Route path="/register" component={RegisterView} />
-            <Route path="/profile" component={ProfileView} />
-            <Route path="/cart/:id?" component={CartView} />
             <Route path="/admin/userlist" component={UserListView} />
+            <Route
+              path="/admin/user/:id/edit"
+              component={UserEditByAdminView}
+            />
+            <Route path="/cart/:id?" component={CartView} />
+            <Route path="/login" component={LoginView} />
+            <Route path="/order/:id" component={OrderView} />
+            <Route path="/payment" component={PaymentView} />
+            <Route path="/placeorder" component={PlaceOrderView} />
+            <Route path="/product/:id" component={ProductView} />
+            <Route path="/profile" component={ProfileView} />
+            <Route path="/register" component={RegisterView} />
+            <Route path="/shipping" component={ShippingView} />
             <Route exact path="/" component={HomeView} />
           </div>
         </div>
