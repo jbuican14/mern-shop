@@ -32,7 +32,7 @@ const UserListView = ({ history }) => {
     } else {
       history.push('/login');
     }
-  }, [dispatch, history, userInfo, successDelete]);
+  }, [dispatch, history, successDelete, userInfo]);
 
   const deleteHandler = (userId) => {
     console.log('deleted');
