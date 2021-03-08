@@ -65,13 +65,23 @@ const Header = () => {
                       Users
                     </NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/admin/productlist">
-                    <NavDropdown.Item style={{ width: '85%' }}>
+                  <LinkContainer
+                    to="/admin/productlist"
+                    style={{ width: '71%', position: 'relative' }}
+                  >
+                    <NavDropdown.Item
+                      style={{ width: '71%', position: 'relative' }}
+                    >
                       Products
                     </NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/admin/orderlist">
-                    <NavDropdown.Item style={{ width: '85%' }}>
+                  <LinkContainer
+                    to="/admin/orderlist"
+                    style={{ width: '71%', position: 'relative' }}
+                  >
+                    <NavDropdown.Item
+                      style={{ width: '71%', position: 'relative' }}
+                    >
                       Orders
                     </NavDropdown.Item>
                   </LinkContainer>

@@ -18,6 +18,7 @@ import PlaceOrderView from './view/PlaceOrderView';
 import OrderView from './view/OrderView';
 import UserListView from './view/UserListView';
 import UserEditByAdminView from './view/UserEditByAdminView';
+import ProductListByAdminView from './view/ProductListByAdminView';
 
 const App = () => {
   return (
@@ -27,6 +28,10 @@ const App = () => {
         <div className="homeview-container">
           <div className="homeview-display">
             <Route path="/admin/userlist" component={UserListView} />
+            <Route
+              path="/admin/productlist"
+              component={ProductListByAdminView}
+            />
             <Route
               path="/admin/user/:id/edit"
               component={UserEditByAdminView}
