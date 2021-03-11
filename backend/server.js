@@ -31,7 +31,7 @@ app.use(notFound);
 app.use(errorHandler);
 
 // Usage for dotenv package
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3004;
 
 app.listen(
   PORT,
