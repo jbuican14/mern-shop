@@ -4,7 +4,12 @@ import { Button, Table, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { listProducts, deleteProduct } from '../actions/product.action';
+import {
+  listProducts,
+  deleteProduct,
+  createProduct,
+} from '../actions/product.action';
+import { PRODUCT_CREATE_RESET } from '../constants/product.constants';
 
 const ProductListByAdminView = ({ history, match }) => {
   const dispatch = useDispatch();
@@ -19,26 +24,45 @@ const ProductListByAdminView = ({ history, match }) => {
     success: successProductDelete,
   } = productDelete;
 
+  const productCreate = useSelector((state) => state.productCreate);
+  const {
+    loading: loadingProductCreate,
+    error: errorProductCreate,
+    success: successProductCreate,
+    product: createdProduct,
+  } = productCreate;
+
   // Check if user is log in && check admin
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
   useEffect(() => {
-    if (userInfo && userInfo.isAdmin) {
-      // Pull in product
-      dispatch(listProducts());
-    } else {
+    dispatch({ type: PRODUCT_CREATE_RESET });
+
+    if (!userInfo && !userInfo.isAdmin) {
       history.push('./login');
     }
-  }, [dispatch, history, userInfo, successProductDelete]);
+    if (successProductCreate) {
+      history.push(`/admin/product/${createdProduct._id}/edit`);
+    } else {
+      dispatch(listProducts());
+    }
+  }, [
+    dispatch,
+    history,
+    userInfo,
+    successProductDelete,
+    successProductCreate,
+    createdProduct,
+  ]);
 
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {
       dispatch(deleteProduct(id));
     }
   };
-  const createProductHandler = (product) => {
-    // CREATE PRODUCT
+  const createProductHandler = () => {
+    dispatch(createProduct());
   };
 
   return (
@@ -49,7 +73,6 @@ const ProductListByAdminView = ({ history, match }) => {
         </Col>
         <Col className="text-right">
           <Button className="my-3" onClick={createProductHandler}>
-            {' '}
             <i className="fas fa-plus"></i> Create Product
           </Button>
         </Col>
@@ -57,6 +80,10 @@ const ProductListByAdminView = ({ history, match }) => {
       {loadingProductDelete && <Loader />}
       {errorProductDelete && (
         <Message variant="danger">{errorProductDelete}</Message>
+      )}
+      {loadingProductCreate && <Loader />}
+      {errorProductCreate && (
+        <Message variant="danger">{errorProductCreate}</Message>
       )}
       {loading ? (
         <Loader />
