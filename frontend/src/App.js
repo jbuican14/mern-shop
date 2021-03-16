@@ -20,6 +20,7 @@ import UserListView from './view/UserListView';
 import UserEditByAdminView from './view/UserEditByAdminView';
 import ProductListByAdminView from './view/ProductListByAdminView';
 import ProductEditByAdminView from './view/ProductEditByAdminView';
+import OrderListByAdminView from './view/OrderListByAdminView';
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
               path="/admin/user/:id/edit"
               component={UserEditByAdminView}
             />
+            <Route path="/admin/orderlist" component={OrderListByAdminView} />
             <Route path="/cart/:id?" component={CartView} />
             <Route path="/login" component={LoginView} />
             <Route path="/order/:id" component={OrderView} />
