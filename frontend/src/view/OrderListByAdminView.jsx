@@ -12,21 +12,6 @@ const OrderListByAdminView = ({ history, match }) => {
   const orderList = useSelector((state) => state.orderList);
   const { loading, error, orders } = orderList;
 
-  // const productDelete = useSelector((state) => state.productDelete);
-  // const {
-  //   loading: loadingProductDelete,
-  //   error: errorProductDelete,
-  //   success: successProductDelete,
-  // } = productDelete;
-
-  // const productCreate = useSelector((state) => state.productCreate);
-  // const {
-  //   loading: loadingProductCreate,
-  //   error: errorProductCreate,
-  //   success: successProductCreate,
-  //   product: createdProduct,
-  // } = productCreate;
-
   // Check if user is log in && check admin
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -40,19 +25,11 @@ const OrderListByAdminView = ({ history, match }) => {
     }
   }, [dispatch, history, userInfo]);
 
-  const deleteHandler = (id) => {};
-  const createProductHandler = () => {};
-
   return (
     <>
       <Row className="align-items-center">
         <Col>
           <h2>Orders</h2>
-        </Col>
-        <Col className="text-right">
-          <Button className="my-3" onClick={createProductHandler}>
-            <i className="fas fa-plus"></i> Create Product
-          </Button>
         </Col>
       </Row>
 
@@ -70,6 +47,7 @@ const OrderListByAdminView = ({ history, match }) => {
               <th>TOTAL PRICE</th>
               <th>PAID</th>
               <th>DELIVERED</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -83,30 +61,15 @@ const OrderListByAdminView = ({ history, match }) => {
                   {order.isPaid ? (
                     order.paidAt.substring(0, 10)
                   ) : (
-                    <i
-                      className="fas fa-times"
-                      style={{ color: 'yellowgreen' }}
-                    ></i>
+                    <i className="fas fa-times" style={{ color: 'yellow' }}></i>
                   )}
                 </td>
-                <td>
-                  {order.isPaid ? (
-                    order.paidAt.substring(0, 10)
-                  ) : (
-                    <i
-                      className="fas fa-times"
-                      style={{ color: 'yellowgreen' }}
-                    ></i>
-                  )}
-                </td>
+
                 <td>
                   {order.isDelivered ? (
                     order.deliveredAt.substring(0, 10)
                   ) : (
-                    <i
-                      className="fas fa-times"
-                      style={{ color: 'yellowgreen' }}
-                    ></i>
+                    <i className="fas fa-times" style={{ color: 'yellow' }}></i>
                   )}
                 </td>
 

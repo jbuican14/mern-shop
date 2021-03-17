@@ -1,6 +1,7 @@
 import path from 'path';
 import dotenv from 'dotenv';
 import color from 'color';
+import morgan from 'morgan';
 import express from 'express';
 import connectDB from './config/db.js';
 
@@ -15,6 +16,10 @@ dotenv.config();
 connectDB();
 
 const app = express();
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 app.use(express.json()); // allow to accept json in the body
 
 app.get('/', (req, res) => {
