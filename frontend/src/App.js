@@ -52,6 +52,7 @@ const App = () => {
             <Route path="/profile" component={ProfileView} />
             <Route path="/register" component={RegisterView} />
             <Route path="/shipping" component={ShippingView} />
+            <Route path="/search/:keyword" component={HomeView} />
             <Route exact path="/" component={HomeView} />
           </div>
         </div>

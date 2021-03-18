@@ -9,15 +9,17 @@ import { listProducts } from '../actions/product.action';
 
 import '../styles/utilities.css';
 
-const HomeView = () => {
+const HomeView = ({ match }) => {
+  const keyword = match.params.keyword;
+
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
 
   useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
+    dispatch(listProducts(keyword));
+  }, [dispatch, keyword]);
 
   return (
     <>
