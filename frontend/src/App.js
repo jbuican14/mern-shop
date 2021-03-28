@@ -33,6 +33,12 @@ const App = () => {
             <Route
               path="/admin/productlist"
               component={ProductListByAdminView}
+              exact
+            />
+            <Route
+              path="/admin/productlist/:pageNumber"
+              component={ProductListByAdminView}
+              exact
             />
             <Route
               path="/admin/product/:id/edit"
@@ -52,7 +58,12 @@ const App = () => {
             <Route path="/profile" component={ProfileView} />
             <Route path="/register" component={RegisterView} />
             <Route path="/shipping" component={ShippingView} />
-            <Route path="/search/:keyword" component={HomeView} />
+            <Route path="/search/:keyword" component={HomeView} exact />
+            <Route
+              path="/search/:keyword/page/:pageNumber"
+              component={HomeView}
+            />
+            <Route path="/page/:pageNumber" component={HomeView} />
             <Route exact path="/" component={HomeView} />
           </div>
         </div>

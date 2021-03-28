@@ -16,7 +16,6 @@ const Header = () => {
   const { userInfo } = userLogin;
 
   const logoutHandler = () => {
-    console.log('Log out');
     dispatch(logout());
   };
 
@@ -29,6 +28,7 @@ const Header = () => {
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
+            {/* WE HAVE ACCESS TO PROPS.HISTORY HERE SO WE PASS IT IN */}
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className="ml-auto">
               <LinkContainer to="/cart">
