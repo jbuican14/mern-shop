@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux'; // use dispatch and bring part of state via useSelector
 import { Row, Col } from 'react-bootstrap';
 
@@ -9,6 +10,8 @@ import Paginate from '../components/Paginate';
 import { listProducts } from '../actions/product.action';
 
 import '../styles/utilities.css';
+import Meta from '../components/Meta';
+import ProductCarousel from '../components/ProductCarousel';
 
 const HomeView = ({ match }) => {
   const keyword = match.params.keyword;
@@ -26,6 +29,14 @@ const HomeView = ({ match }) => {
 
   return (
     <>
+      <Meta />
+      <div className="main-header">
+        <div className="u-center-text u-margin-bottom-1">
+          <h1>Welcome to MERNShop</h1>
+        </div>
+        {!keyword && <ProductCarousel />}
+      </div>
+
       {loading ? (
         <Loader />
       ) : error ? (

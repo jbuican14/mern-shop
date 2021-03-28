@@ -7,7 +7,9 @@ const Footer = () => {
     <>
       <Container>
         <Row className="footer-container">
-          <Col className="text-center py-3">Made with Love 💗</Col>
+          <Col className="text-center py-3" style={{ color: '#777777' }}>
+            Made with Love 💗
+          </Col>
         </Row>
       </Container>
     </>
